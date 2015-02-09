@@ -1,0 +1,241 @@
+body {
+	background-image: url('../images/Background_big.png');
+	background-repeat: no-repeat;
+	background-size: 100%, 100%;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+bodyDiv {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1536px;
+	height: 700px;
+}
+
+a {
+  color: #00B7FF;
+}
+ /* settings for infoFrame */
+	#infoFrame {
+		position: absolute;
+		left: 900px; top: 30px;
+		width: 900px;
+		height: 450px;
+	}
+/*
+	Settings for Wind Speed
+		views/windsock.ejs
+*/
+
+        .awesome-button {
+            display: block;
+            width: 190px;
+            height: 540px;
+            background: url("../images/20141120_190x540_160frames_windsack.png") no-repeat 0 0;
+            margin-bottom: 1em;
+			position:absolute;
+			left:10px; top:380px;
+        }
+        .WScurrentValue {
+			position: absolute;
+			left: 10;
+			top:890px;
+		}   
+		.WSbuttonDiv{
+			position:absolute;
+			left:50px; top:930px;
+		}
+		#WSupButton{
+			width:60px; height: 40px;
+		}
+		#WSdownButton{
+			width:60px; height: 40px;
+		}		
+
+
+/*
+	Settings for Pitch Angle 
+		views/pitchAngle.ejs
+*/
+        .pitchAngle-button {
+            display: block;
+            width: 280px;
+            height: 540px;
+            background: url("../images/Pitch_final.png") no-repeat 0 0;
+            margin-bottom: 1em;
+           
+			position:absolute;
+			left:330px; top:315px;
+        }
+        .PAcurrentFrame {
+			position:absolute;
+			left:390px; top:105px;
+		}
+		
+		.PAcurrentAngle {
+			position:absolute;
+			left:340px; top:890px;
+		}
+		.PAbuttonDiv{
+			position:absolute;
+			left:340px; top:930px;
+		}
+		.PAinitDiv{
+			position:absolute;
+			left:500px; top:930px;
+		}
+		#PAupButton{
+			width:60px; height: 40px;
+		}
+		#PAdownButton{
+			width:60px; height: 40px;
+		}		
+		.pitchAngelDiv {
+			position:absolute;
+			left:330px; top:100px;
+		}
+ /*
+	Settings for Dummy Load
+		views/dummyLoad.ejs
+*/
+
+		.DummyLoadDiv {
+			width: 420px;
+			height: 100px;
+		}
+	
+        .DLawesome-button {
+            display: block;
+			
+            width: 294px;
+            height: 179px;
+			
+            background: url("../images/20141202_294x179_201_load.png") no-repeat 0 0;
+						/* background-size: 100%, 100%;
+						*/
+
+            margin-bottom: 1em;
+			position:absolute;
+			left:580px; top:700px;
+        }
+		.DLcurrentValue {
+			position:absolute;
+			left:640px; top:890px;
+		}
+		.DLbuttonDiv{
+			position:absolute;
+			left:640px; top:930px;
+		}
+		#DLupButton{
+			width:60px; height: 40px;
+		}
+		#DLdownButton{
+			width:60px; height: 40px;
+		}		
+
+/*
+	Settings for Data Collection
+		views/dataInput.csf
+*/
+	.DIstartButtonDiv{
+			position: absolute;
+			left: 400px; top: 750px;
+		}
+		.DIstopButtonDiv{
+			position: absolute;
+			left: 500px; top: 750px;
+		}
+		.DIstartButton {
+			width: 80px; height: 50px;
+		}
+		.DIstopButton {
+			width: 80px; height: 50px;
+		}
+
+/* 
+	Settings for Gauges
+		views/gauges.ejs
+*/
+ 		.guageDivDiv {
+		    box-shadow: 10px 10px 5px #888888;
+
+		    border: 20px solid;
+    border-radius: 25px;
+			position:absolute;
+			left:3px; top:5px;
+		}
+
+/*
+	settings for D3JS line graph, 
+		views/lineGraph.ejs
+*/
+
+/* For Data Selection Buttons */
+
+  input, label {
+    line-height: 1.5em;
+  }
+
+	.graphSelectButtons {
+			position: absolute;
+			left: 1300px; top: 900px;
+		}
+
+		/* for Line Graph itself */
+svg {
+  font: 10px sans-serif;
+}
+ 
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+ 		.dataInputDiv {
+			position:absolute;
+			left:630px; top:90px;
+		}
+
+		
+		.guageDiv {
+			position: absolute;
+			left: 40px; top: 160px;
+		}
+
+
+	#lineGraphTitle {
+		position: relative;
+		left: 200px;
+		top: 20px;
+	}
+	.lineGraphDiv {
+		position: absolute;
+		left: 1000px;
+		top: 450px;
+		width: 700px;
+		height: 300px;
+	}
+	
+	
+/*
+	Settings for record functions
+		views/record.ejs
+*/
+  input, label {
+    line-height: 1.5em;
+  }
+
+	.recordButtons {
+			position: absolute;
+			left: 1650px; top: 900px;
+		}
+
