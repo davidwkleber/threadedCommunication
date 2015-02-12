@@ -16,11 +16,23 @@ bodyDiv {
 a {
   color: #00B7FF;
 }
+
+
+/* 
+	Settings for Gauges
+		views/gauges.ejs
+*/
+ 	#guageDiv {
+		position: absolute;
+		left: 9px; top: 500px;
+		width: 800px;
+	}
+
  /* settings for infoFrame */
 	#infoFrame {
 		position: absolute;
-		left: 900px; top: 30px;
-		width: 900px;
+		left: 9px; top: 3px;
+		width: 1880px;
 		height: 450px;
 	}
 /*
@@ -30,17 +42,17 @@ a {
 
         .awesome-button {
             display: block;
-            width: 190px;
-            height: 540px;
-            background: url("../images/20141120_190x540_160frames_windsack.png") no-repeat 0 0;
+            width: 171px;
+            height: 486px;
+            background: url("../images/20150208_171x486_160frames_windsack_small.png") no-repeat 0 0;
             margin-bottom: 1em;
 			position:absolute;
-			left:10px; top:380px;
+			left:10px; top:530px;
         }
         .WScurrentValue {
 			position: absolute;
-			left: 10;
-			top:890px;
+			left: 10px;
+			top:920px;
 		}   
 		.WSbuttonDiv{
 			position:absolute;
@@ -60,13 +72,13 @@ a {
 */
         .pitchAngle-button {
             display: block;
-            width: 280px;
-            height: 540px;
-            background: url("../images/Pitch_final.png") no-repeat 0 0;
+            width: 252px;
+            height: 486px;
+            background: url("../images/20150208_Pitch_final_small_252x486.png") no-repeat 0 0;
             margin-bottom: 1em;
            
 			position:absolute;
-			left:330px; top:315px;
+			left:330px; top:530px;
         }
         .PAcurrentFrame {
 			position:absolute;
@@ -108,16 +120,16 @@ a {
         .DLawesome-button {
             display: block;
 			
-            width: 294px;
-            height: 179px;
+            width: 221px;
+            height: 134px;
 			
-            background: url("../images/20141202_294x179_201_load.png") no-repeat 0 0;
+            background: url("../images/20150208_load_small_221x134_201frames.png") no-repeat 0 0;
 						/* background-size: 100%, 100%;
 						*/
 
             margin-bottom: 1em;
 			position:absolute;
-			left:580px; top:700px;
+			left:580px; top:730px;
         }
 		.DLcurrentValue {
 			position:absolute;
@@ -153,18 +165,7 @@ a {
 			width: 80px; height: 50px;
 		}
 
-/* 
-	Settings for Gauges
-		views/gauges.ejs
-*/
- 		.guageDivDiv {
-		    box-shadow: 10px 10px 5px #888888;
 
-		    border: 20px solid;
-    border-radius: 25px;
-			position:absolute;
-			left:3px; top:5px;
-		}
 
 /*
 	settings for D3JS line graph, 
