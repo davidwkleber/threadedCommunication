@@ -24,7 +24,7 @@ a {
 */
  	#guageDiv {
 		position: absolute;
-		left: 9px; top: 500px;
+		left: 9px; top: 380px;
 		width: 800px;
 	}
 
@@ -33,7 +33,7 @@ a {
 		position: absolute;
 		left: 9px; top: 3px;
 		width: 1880px;
-		height: 450px;
+		height: 350px;
 	}
 /*
 	Settings for Wind Speed
@@ -51,8 +51,9 @@ a {
         }
         .WScurrentValue {
 			position: absolute;
-			left: 10px;
-			top:920px;
+			left: 50px;
+			top:840px;
+			font-size:x-large;
 		}   
 		.WSbuttonDiv{
 			position:absolute;
@@ -87,7 +88,9 @@ a {
 		
 		.PAcurrentAngle {
 			position:absolute;
-			left:340px; top:890px;
+			left:340px; 
+			top:840px;
+			font-size:x-large;
 		}
 		.PAbuttonDiv{
 			position:absolute;
@@ -133,7 +136,9 @@ a {
         }
 		.DLcurrentValue {
 			position:absolute;
-			left:640px; top:890px;
+			left:640px; 
+			top:840px;
+			font-size:x-large;
 		}
 		.DLbuttonDiv{
 			position:absolute;
@@ -220,8 +225,8 @@ svg {
 	}
 	.lineGraphDiv {
 		position: absolute;
-		left: 1000px;
-		top: 450px;
+		left: 500px;
+		top: 300px;
 		width: 700px;
 		height: 300px;
 	}
