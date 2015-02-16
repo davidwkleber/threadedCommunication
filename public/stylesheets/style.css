@@ -24,7 +24,8 @@ a {
 */
  	#guageDiv {
 		position: absolute;
-		left: 9px; top: 380px;
+		left: 9px; 
+		top: 280px;
 		width: 800px;
 	}
 
@@ -33,7 +34,7 @@ a {
 		position: absolute;
 		left: 9px; top: 3px;
 		width: 1880px;
-		height: 350px;
+		height: 250px;
 	}
 /*
 	Settings for Wind Speed
@@ -47,12 +48,12 @@ a {
             background: url("../images/20150208_171x486_160frames_windsack_small.png") no-repeat 0 0;
             margin-bottom: 1em;
 			position:absolute;
-			left:10px; top:530px;
+			left:10px; top:380px;
         }
         .WScurrentValue {
 			position: absolute;
 			left: 50px;
-			top:840px;
+			top:740px;
 			font-size:x-large;
 		}   
 		.WSbuttonDiv{
@@ -79,7 +80,7 @@ a {
             margin-bottom: 1em;
            
 			position:absolute;
-			left:330px; top:530px;
+			left:330px; top:380px;
         }
         .PAcurrentFrame {
 			position:absolute;
@@ -89,7 +90,7 @@ a {
 		.PAcurrentAngle {
 			position:absolute;
 			left:340px; 
-			top:840px;
+			top:740px;
 			font-size:x-large;
 		}
 		.PAbuttonDiv{
@@ -132,12 +133,12 @@ a {
 
             margin-bottom: 1em;
 			position:absolute;
-			left:580px; top:730px;
+			left:580px; top:680px;
         }
 		.DLcurrentValue {
 			position:absolute;
 			left:640px; 
-			top:840px;
+			top:620px;
 			font-size:x-large;
 		}
 		.DLbuttonDiv{
@@ -244,4 +245,171 @@ svg {
 			position: absolute;
 			left: 1650px; top: 900px;
 		}
+		
+		
+		
+	/* Wind Speed Init Slider Checkbox */
+		.WSinitDiv{
+			position:absolute;
+			left:50px; top:890px;
+		}
+    .WSinitButton {
+    position: absolute; 
+    left:150px; top:990px;
+    width: 100px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .WSinitButton{
+    display: none;
+    }
+    .WSinitButton-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #999999; border-radius: 20px;
+    }
+    .WSinitButton-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.1s ease-in 0s;
+    -o-transition: margin 0.1s ease-in 0s; transition: margin 0.1s ease-in 0s;
+    }
+    .WSinitButton-inner:before, .WSinitButton-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .WSinitButton-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #EEEEEE; color: #000000;
+    }
+    .WSinitButton-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+    }
+    .WSinitButton-switch {
+    display: block; width: 40px; margin: -5px;
+    background: #D91515;
+    border: 3px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.1s ease-in 0s; -webkit-transition: all 0.1s ease-in 0s;
+    -o-transition: all 0.1s ease-in 0s; transition: all 0.1s ease-in 0s; 
+    }
+    .WSinitButton:checked + .WSinitButton-label .WSinitButton-inner {
+    margin-left: 0;
+    }
+    .WSinitButton:checked + .WSinitButton-label .WSinitButton-switch {
+    right: 0px;
+    background-color: #2FCA27;
+    }
 
+	
+		
+		
+		
+/* Pitch Angle Init Slider Checkbox */
+
+    .PAinitButton {
+    position: absolute; 
+    left:350px; top:990px;
+    width: 100px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .PAinitButton{
+    display: none;
+    }
+    .PAinitButton-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #999999; border-radius: 20px;
+    }
+    .PAinitButton-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.1s ease-in 0s;
+    -o-transition: margin 0.1s ease-in 0s; transition: margin 0.1s ease-in 0s;
+    }
+    .PAinitButton-inner:before, .PAinitButton-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .PAinitButton-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #EEEEEE; color: #000000;
+    }
+    .PAinitButton-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+    }
+    .PAinitButton-switch {
+    display: block; width: 40px; margin: -5px;
+    background: #D91515;
+    border: 3px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.1s ease-in 0s; -webkit-transition: all 0.1s ease-in 0s;
+    -o-transition: all 0.1s ease-in 0s; transition: all 0.1s ease-in 0s; 
+    }
+    .PAinitButton:checked + .PAinitButton-label .PAinitButton-inner {
+    margin-left: 0;
+    }
+    .PAinitButton:checked + .PAinitButton-label .PAinitButton-switch {
+    right: 0px;
+    background-color: #2FCA27;
+    }
+
+/* dummy load - motor control Init Slider Checkbox */
+		.DLinitDiv{
+			position:absolute;
+			left:680px; top:890px;
+		}
+    .DLinitButton {
+    position: absolute; 
+    left:150px; top:990px;
+    width: 100px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .DLinitButton{
+    display: none;
+    }
+    .DLinitButton-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #999999; border-radius: 20px;
+    }
+    .DLinitButton-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.1s ease-in 0s;
+    -o-transition: margin 0.1s ease-in 0s; transition: margin 0.1s ease-in 0s;
+    }
+    .DLinitButton-inner:before, .DLinitButton-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .DLinitButton-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #EEEEEE; color: #000000;
+    }
+    .DLinitButton-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+    }
+    .DLinitButton-switch {
+    display: block; width: 40px; margin: -5px;
+    background: #D91515;
+    border: 3px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.1s ease-in 0s; -webkit-transition: all 0.1s ease-in 0s;
+    -o-transition: all 0.1s ease-in 0s; transition: all 0.1s ease-in 0s; 
+    }
+    .DLinitButton:checked + .DLinitButton-label .DLinitButton-inner {
+    margin-left: 0;
+    }
+    .DLinitButton:checked + .DLinitButton-label .DLinitButton-switch {
+    right: 0px;
+    background-color: #2FCA27;
+    }
