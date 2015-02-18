@@ -14,7 +14,7 @@
   function dataInputFunction() {
   
  
-		$('.DIstartButton').on("click", function(event){
+		// $('.DIstartButton').on("click", function(event){
 		     //   iosocket.emit('sliderval',3 );
   					event.preventDefault();					
 					var posting = $.post( '/dataInput', { dataInputValue: 'on' } );
@@ -22,8 +22,9 @@
 					posting.done(function( data ) {
 //						console.log('client dataInput post done ');
 					});
-				});	
+				// });	
 				
+		/*
 		$('.DIstopButton').on("click", function(event){
 		     //   iosocket.emit('sliderval',3 );
   					event.preventDefault();					
@@ -33,11 +34,12 @@
 //						console.log('client dataInput post done ');
 					});
 				});	
+				*/
 				
 };
 				
 </script>
- 
+<script> /*
 <div class=dataInputDiv>
 
 <title><%= title %></title>
@@ -52,6 +54,7 @@
 		
 </div>
 </form>
+*/ </script>
 
 </body>
 </html>

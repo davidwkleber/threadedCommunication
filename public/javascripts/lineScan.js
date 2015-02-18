@@ -4,8 +4,8 @@ var n = 40,
     data = d3.range(n).map(random);
  
 var margin = {top: 20, right: 20, bottom: 20, left: 50},
-	width = 700 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+	width = 1050 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
  
 var x = d3.scale.linear()
     .domain([0, n - 1])

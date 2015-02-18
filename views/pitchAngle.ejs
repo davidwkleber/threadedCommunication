@@ -14,7 +14,7 @@
  <form name="pitchAngleForm" id"pitchAngleForm" class="pitchAngleForm" action="/pitchAngle" method="post">
 <title><%= title %></title>
          <a class="pitchAngle-button"></a>
-		<p class="PAcurrentAngle" name="PAcurrentAngle" id="PAcurrentAngle"><span>-10</span></p>
+		<p class="PAcurrentAngle" name="PAcurrentAngle" id="PAcurrentAngle"><span>-10°</span></p>
 	
 
 
@@ -26,20 +26,15 @@
  
 </div>
 
- <div class="PAinitDiv" id="PAinitDiv" name="PAinitDiv"> 
- 
+ <div class="PAinitButton" id="PAinitButton" name="PAinitButton">
+
 	<form>
 
-
-<input type="checkbox" name="PAinitButton" class="PAinitButton" id="PAinitButton" checked>
-<label class="PAinitButton-label" for="PAinitButton">
-<span class="PAinitButton-inner"></span>
-<span class="PAinitButton-switch"></span>
-</label>
-
-
-
-
+    <input type="checkbox" name="PAinitButton-checkbox" class="PAinitButton-checkbox" id="myPAinitButton" checked>
+    <label class="PAinitButton-label" for="myPAinitButton">
+        <span class="PAinitButton-inner"></span>
+        <span class="PAinitButton-switch"></span>
+    </label>
 	</form>
 </div>
         <script>
@@ -143,7 +138,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
             PAinstance.$dispatcher
                 .on(SpriteClip.Event.ENTER_FRAME, function (e, clip) {
 					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
-					$(".PAcurrentAngle span").text(PAcurrentAngle);
+					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
                 });
 				
@@ -165,7 +160,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 										
 					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
 										
-					$(".PAcurrentAngle span").text(PAcurrentAngle);
+					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
 						console.log('client pitchAngle post done ');
@@ -181,7 +176,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					console.log("PA init back");
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: "down" } );
 											
-					$(".PAcurrentAngle span").text(PAcurrentAngle);
+					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 				} else {
 				if (PAinstance.currentFrame > 1 ) {
@@ -193,7 +188,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					
 					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
 											
-					$(".PAcurrentAngle span").text(PAcurrentAngle);
+					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
 						console.log('client pitchAngle post done ');
@@ -203,18 +198,18 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 			});
 			
 					
-		$( ".PAinitButton" ).on( "click", function() {
+		$( ".PAinitButton-checkbox" ).on( "click", function() {
 
 			console.log("INIT ON");
-				PAinitSelection = $(".PAinitButton:checked").val();
+				PAinitSelection = $(".PAinitButton-checkbox:checked").val();
 				console.log("init on? "+PAinitSelection);
 				if (PAinitSelection === "on") {
 					console.log("INIT ON");
 				} else {
-													PAinstance.currentFrame = 1;
+					PAinstance.currentFrame = 1;
 					PAcurrentAngle = (PAinstance.currentFrame-100)/10;
 					PAinstance.gotoAndStop(1);							
-					$(".PAcurrentAngle span").text(PAcurrentAngle);
+					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 				}
 		 });
