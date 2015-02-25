@@ -61,7 +61,8 @@ a {
 		}   
 		.WSbuttonDiv{
 			position:absolute;
-			left:50px; top:880px;
+			left:200px; top:880px;
+			width: 60px;
 		}
 		#WSupButton{
 			width:60px; height: 40px;
@@ -73,7 +74,7 @@ a {
 /* Wind Fan On Off Checkbox */
 .WSinitButton {
     position: absolute; 
-	 left:50px; top:930px;
+	 left:15px; top:910px;
 	width: 158px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
@@ -132,7 +133,7 @@ a {
             margin-bottom: 1em;
            
 			position:absolute;
-			left:330px; top:360px;
+			left:330px; top:380px;
         }
         .PAcurrentFrame {
 			position:absolute;
@@ -147,11 +148,13 @@ a {
 		}
 		.PAbuttonDiv{
 			position:absolute;
-			left:340px; top:880px;
+			left:490px; top:880px;
+			width: 60px;
+
 		}
 		.PAinitDiv{
 			position:absolute;
-			left:500px; top:930px;
+			left:490px; top:930px;
 		}
 		#PAupButton{
 			width:60px; height: 40px;
@@ -167,7 +170,7 @@ a {
 /* For the Initialization checkbox */
 .PAinitButton {
    position: absolute; 
-    left:340px; top:930px;
+    left:310px; top:910px;
 	width: 158px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
@@ -246,7 +249,8 @@ a {
 		}
 		.DLbuttonDiv{
 			position:absolute;
-			left:640px; top:880px;
+			left:780px; top:880px;
+			width: 60px;
 		}
 		#DLupButton{
 			width:60px; height: 40px;
@@ -257,7 +261,7 @@ a {
 /* For the Dummy Load/Motor Control checkbox */
 .DLinitButton {
     position: absolute; 
-	left:640px; top:930px;
+	left:600px; top:910px;
 
 	width: 158px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -339,7 +343,7 @@ a {
 
 	.graphSelectButtons {
 			position: absolute;
-			left: 1200px; top: 890px;
+			left: 1000px; top: 890px;
 		}
 
 		/* for Line Graph itself */
@@ -375,15 +379,17 @@ svg {
 	#lineGraphTitle {
 		position: relative;
 		left: 400px;
-		top: 20px;
+		top: 75px;
 	}
 	.lineGraphDiv {
 		position: absolute;
 		left: 840px;
 		top: 200px;
-		width: 1050px;
-		height: 600px;
+		width: 1000px;
+		height: 700px;
 		 border-right:none;
+		overflow: hidden;
+
 	}
 	
 	
@@ -398,9 +404,10 @@ svg {
 	.recordButtons {
 			position: absolute;
 			width: 158px;
-			left: 1700px; top: 900px;
+			left: 1600px; top: 910px;
 			   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
  border-right:none;
+
 		}
 
 .recordButtons-checkbox {

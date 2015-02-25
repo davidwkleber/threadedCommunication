@@ -16,7 +16,7 @@
 	</div>
 
 		<div class="recordButtons"  id="recordButtons" name="recordButtons">
-    <input type="recordButtons" name="recordButtons-checkbox" class="recordButtons-checkbox" id="myrecordButtons">
+    <input type="checkbox" name="recordButtons-checkbox" class="recordButtons-checkbox" id="myrecordButtons">
     <label class="recordButtons-label" for="myrecordButtons">
         <span class="recordButtons-inner"></span>
         <span class="recordButtons-switch"></span>
@@ -83,6 +83,8 @@
 		var recordsocket;
 		var recordDataFlag = false;
 			recordedData = [];
+		var recordSelection = "off";
+			
 			var recordsocket = io.connect('http://127.0.0.1:1337');
 
 			recordsocket.on('connect', function (data) {
@@ -151,6 +153,23 @@
 			recordedData = []
 		}
 		
+				$( ".recordButtons-checkbox" ).on( "click", function() {
+
+			console.log("INIT on click");
+				recordSelection = $(".recordButtons-checkbox:checked").val();
+				console.log("init on? "+PAinitSelection);
+				if (recordSelection == "on") {
+					console.log("Record ON");
+					recordFunction()
+		
+				} else {
+					console.log("Record OFF");
+					if ( recordDataFlag === true ) {
+						stopRecordFunction()
+						saveDataFunction()
+					}
+				}
+		 });
 
 		</script>			
 					

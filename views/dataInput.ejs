@@ -11,16 +11,16 @@
    
    
    <script>
-  function dataInputFunction() {
+  // function dataInputFunction() {
   
  
 		// $('.DIstartButton').on("click", function(event){
 		     //   iosocket.emit('sliderval',3 );
-  					event.preventDefault();					
+  			//		event.preventDefault();					
 					var posting = $.post( '/dataInput', { dataInputValue: 'on' } );
 // console.log('dataInputPost now');
 					posting.done(function( data ) {
-//						console.log('client dataInput post done ');
+					console.log('client dataInput post done ');
 					});
 				// });	
 				
@@ -36,7 +36,7 @@
 				});	
 				*/
 				
-};
+// };
 				
 </script>
 <script> /*

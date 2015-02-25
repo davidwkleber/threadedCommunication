@@ -14,8 +14,12 @@
 <div class="WSbuttonDiv">
 
 <span class="WSbuttons">
-	<button class="WSdownButton" id="WSdownButton" >\/</button>
-	<button class="WSupButton" id="WSupButton" name="WSupButton" >/\</button>
+<div>
+	<input type="image" src="/images/up.png" class="WSupButton" id="WSupButton" name="WSupButton" ></button>
+	</div><div>
+	<input type="image" src="/images/down.png"  class="WSdownButton" id="WSdownButton" ></button>
+	</div>
+
   </span>
 </div>
 
@@ -69,29 +73,29 @@ WSinstance.currentFrame = WSframeToPlay;
 				// $(".awesome-button").on('touchmove', function (event) {
 				.on('touchmove', function (TouchEvent) {
 				
-console.log('touchmove in button '+mouseIsDown);
+// console.log('touchmove in button '+mouseIsDown);
 		
 				if ( mouseIsDown === "true" ) {
-										console.log('mouseIsDown == true in touchmove');
+		//								console.log('mouseIsDown == true in touchmove');
 
 					//check to make sure there is data to compare against
 					if (typeof(last_position.x) != 'undefined' ) {
 					//get the change from last position to this position
-					console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXget mouse location from event first time');
+		//			console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXget mouse location from event first time');
 
 					var deltaX = last_position.x - event.touches[0].clientX,
 						deltaY = last_position.y - event.touches[0].clientY;
 
-console.log("Frame to Play "+WSframeToPlay);
+// console.log("Frame to Play "+WSframeToPlay);
 				var initialWSfameToPlay = WSframeToPlay;
-				console.log('deltaY: '+deltaY);			
+	//			console.log('deltaY: '+deltaY);			
 				WSframeToPlay = Math.floor(+WSframeToPlay + +deltaY/2);
-console.log('Play WS frame: '+WSframeToPlay);
+// console.log('Play WS frame: '+WSframeToPlay);
 
 				if 	(+WSframeToPlay >= +WSnumFrames) WSframeToPlay = +WSnumFrames;
 				if 	(+WSframeToPlay <= +6) WSframeToPlay = +6;
 // WSframeToPlay = Math.floor(WSframeToPlay);		
-				console.log('Play WS frame: '+WSframeToPlay);
+	//			console.log('Play WS frame: '+WSframeToPlay);
 // WSinstance.stops([initialWSfameToPlay,WSframeToPlay]);	
 				
 				// WSinstance.stop();
@@ -103,7 +107,7 @@ console.log('Play WS frame: '+WSframeToPlay);
 
 				}
 			} else {
-					console.log('mouseIsDown != true ');
+	//				console.log('mouseIsDown != true ');
 					WSinstance.stop();
 				}
 							//set the new last position to the current for next time

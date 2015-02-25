@@ -20,8 +20,12 @@
 
 <div class="PAbuttonDiv">
 <span class="PAbuttons">
-  <button class="PAdownButton" id="PAdownButton" >\/</button>
- <button class="PAupButton" id="PAupButton" name="PAupButton" >/\</button>
+<div>
+ <input type="image" src="/images/up.png"  class="PAupButton" id="PAupButton" name="PAupButton" ></button>
+ </div><div>
+   <input type="image" src="/images/down.png"  class="PAdownButton" id="PAdownButton" ></button>
+   </div>
+
   </span>
  
 </div>
@@ -44,7 +48,7 @@
 		var PAmouseIsDown = "false";
 		var PAframeToPlay = 1;
 		var PAnumFrames = 600;
-		var PAinitSelection = "off";
+		var PAinitSelection = "on";
 		
 		//setup a variable to store our last position
 var PAlast_position = {},
@@ -137,19 +141,14 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 			
             PAinstance.$dispatcher
                 .on(SpriteClip.Event.ENTER_FRAME, function (e, clip) {
-					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
+					var PAcurrentAngle = (PAinstance.currentFrame-101)/10;
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
-                    $(".PAcurrentFrame span").text(PAinstance.currentFrame);
+                   //  $(".PAcurrentFrame span").text(PAinstance.currentFrame);
                 });
 				
 			$('#PAupButton').click(function(event){
 			  	event.preventDefault();
 				if( PAinitSelection == "on" ) {
-									console.log("PA init Forward");
-
-					var posting = $.post( '/pitchAngle', { pitchAngleValue: "up" } );
-				} else {
-
 				if (PAinstance.currentFrame < PAnumFrames ) {
 					PAinstance.nextFrame();
 
@@ -158,14 +157,18 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame} );
 										
-					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
-										
+					var PAcurrentAngle = (PAinstance.currentFrame-101)/10;
+						
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
-                    $(".PAcurrentFrame span").text(PAinstance.currentFrame);
+                 //   $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
 						console.log('client pitchAngle post done ');
 					});
 				};
+				} else {
+					console.log("PA init Forward");
+					var posting = $.post( '/pitchAngle', { pitchAngleValue: "up" } );
+				
 				};
 			});
 			$('#PAdownButton').click(function(event){
@@ -173,12 +176,6 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 				// else the /pitchAngle post (get?) goes through anyway, 
 				event.preventDefault();
 				if( PAinitSelection == "on" ) {
-					console.log("PA init back");
-					var posting = $.post( '/pitchAngle', { pitchAngleValue: "down" } );
-											
-					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
-                    $(".PAcurrentFrame span").text(PAinstance.currentFrame);
-				} else {
 				if (PAinstance.currentFrame > 1 ) {
 
 					PAinstance.prevFrame();
@@ -186,31 +183,37 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					console.log('client pitchAngle BUTTON: '+PAinstance.currentFrame);
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame } );
 					
-					var PAcurrentAngle = (PAinstance.currentFrame-100)/10;
+					var PAcurrentAngle = (PAinstance.currentFrame-101)/10;
 											
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
 						console.log('client pitchAngle post done ');
 					});
-				};
+				}
+					
+				
+				} else {
+				console.log("PA init back");
+					var posting = $.post( '/pitchAngle', { pitchAngleValue: "down" } );
 				};
 			});
 			
 					
 		$( ".PAinitButton-checkbox" ).on( "click", function() {
 
-			console.log("INIT ON");
+			console.log("INIT on click");
 				PAinitSelection = $(".PAinitButton-checkbox:checked").val();
 				console.log("init on? "+PAinitSelection);
-				if (PAinitSelection === "on") {
-					console.log("INIT ON");
-				} else {
-					PAinstance.currentFrame = 1;
-					PAcurrentAngle = (PAinstance.currentFrame-100)/10;
+				if (PAinitSelection == "on") {
+									PAinstance.currentFrame = 1;
+					PAcurrentAngle = (PAinstance.currentFrame-101)/10;
 					PAinstance.gotoAndStop(1);							
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
+				} else {
+					console.log("INIT ON");
+
 				}
 		 });
 							 
