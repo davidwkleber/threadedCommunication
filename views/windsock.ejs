@@ -61,7 +61,7 @@ WSinstance.currentFrame = WSframeToPlay;
             
             WSinstance.$el
                 .on("touchstart", function () {
-					console.log('mouse down');
+	//				console.log('mouse down');
 					mouseIsDown = "true";
 					last_position = {
 						x : event.touches[0].clientX,
@@ -120,13 +120,13 @@ WSinstance.currentFrame = WSframeToPlay;
 			
                 .on("touchend", function () {
 					mouseIsDown = "false";
-											console.log('mouseIsDown = false ');
+		//									console.log('mouseIsDown = false ');
 
            //         WSinstance.stop();
 					event.preventDefault();
 					WScurrentValue = (WSinstance.currentFrame/WSnumFrames)*100;
 
-					console.log('client windSpeed: '+WSinstance.currentFrame);
+		//			console.log('client windSpeed: '+WSinstance.currentFrame);
 					var posting = $.post( '/windSpeed', { windSpeedValue: WScurrentValue } );
 					
 					var valueText = (WScurrentValue*0.1456)-0.5523;	
@@ -135,7 +135,7 @@ WSinstance.currentFrame = WSframeToPlay;
 				
 					$(".WScurrentValue span").text(valueText+" m/s");
 					posting.done(function( data ) {
-						console.log('client post done ');
+	//					console.log('client post done ');
 					})
                 });
 
@@ -159,11 +159,11 @@ WSinstance.currentFrame = WSframeToPlay;
 
 					if 	(+WSinstance.currentFrame < +WSnumFrames) {
 
-										console.log('client wind speed BUTTON: '+WSinstance.currentFrame);
+		//								console.log('client wind speed BUTTON: '+WSinstance.currentFrame);
 					WSinstance.nextFrame();
 
 					// WSinstance.currentFrame += 1;
-					console.log('client windSpeed BUTTON: '+WSinstance.currentFrame);
+		//			console.log('client windSpeed BUTTON: '+WSinstance.currentFrame);
 										
 					WScurrentValue = (WSinstance.currentFrame/WSnumFrames)*100;
 
@@ -174,7 +174,7 @@ WSinstance.currentFrame = WSframeToPlay;
 					$(".WScurrentValue span").text(valueText+" m/s");
                     $(".WScurrentFrame span").text(WSinstance.currentFrame);
 					posting.done(function( data ) {
-						console.log('client windSpeed post done ');
+		//				console.log('client windSpeed post done ');
 					});
 					};
 				});
@@ -187,7 +187,7 @@ WSinstance.currentFrame = WSframeToPlay;
 
 					WScurrentValue = (WSinstance.currentFrame/WSnumFrames)*100;
 
-					console.log('client windSpeed BUTTON: '+WSinstance.currentFrame);
+			//		console.log('client windSpeed BUTTON: '+WSinstance.currentFrame);
 					var posting = $.post( '/windSpeed', { windSpeedValue: WScurrentValue } );
 										
 					var valueText = (WScurrentValue*0.1456)-0.5523;	
@@ -197,7 +197,7 @@ WSinstance.currentFrame = WSframeToPlay;
 					$(".WScurrentValue span").text(valueText+" m/s");
                     $(".WScurrentFrame span").text(WSinstance.currentFrame);
 					posting.done(function( data ) {
-						console.log('client windSpeed post done ');
+		//				console.log('client windSpeed post done ');
 					});
 				};
 			});		

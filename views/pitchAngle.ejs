@@ -65,7 +65,7 @@ $PAoutput = $('#output');
  //           PAinstance.$el
 				if (hasTouch) {
 					PAinstance.$el.on("touchstart", function () {
- 						console.log('PA touch  down');
+ 			//			console.log('PA touch  down');
 						PAmouseIsDown = "true";
 						//check to make sure there is data to compare against
 						PAlast_position = {
@@ -76,7 +76,7 @@ $PAoutput = $('#output');
                 	})
 				} else {
 					PAinstance.$el.on("mousedown", function () {
-						console.log('PA mouse down');
+	//					console.log('PA mouse down');
 						PAmouseIsDown = "true";
 					})
 				}
@@ -85,13 +85,13 @@ $PAoutput = $('#output');
 			//	$(".awesome-button").on('touchmove', function (TouchEvent) {
 				PAinstance.$el.on('touchmove', function (TouchEvent) {	
 
-			console.log('PAmouse move');
+	//		console.log('PAmouse move');
 					if ( PAmouseIsDown === "true" ) {
 //										console.log('PAmouseIsDown == true');
 
 						//check to make sure there is data to compare against
 						if (typeof(PAlast_position.x) != 'undefined' ) {
-							console.log('PAlast_position.x '+PAlast_position.x);
+	//						console.log('PAlast_position.x '+PAlast_position.x);
 							//get the change from last position to this position
 				
 							var PAdeltaX = PAlast_position.x - event.touches[0].clientX,
@@ -120,7 +120,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					PAmouseIsDown = "false";
                     PAinstance.stop();
 					event.preventDefault();
-					console.log('client pitchAngle: '+PAinstance.currentFrame);
+	//				console.log('client pitchAngle: '+PAinstance.currentFrame);
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame } );
 					posting.done(function( data ) {
 						console.log('client pitchAngle post done ');
@@ -131,10 +131,10 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					PAmouseIsDown = "false";
                     PAinstance.stop();
 					event.preventDefault();
-					console.log('client pitchAngle: '+PAinstance.currentFrame);
+	//				console.log('client pitchAngle: '+PAinstance.currentFrame);
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame } );
 					posting.done(function( data ) {
-						console.log('client pitchAngle post done ');
+	//					console.log('client pitchAngle post done ');
 					});
                 });
 			}
@@ -153,7 +153,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					PAinstance.nextFrame();
 
 
-					console.log('client pitchAngle BUTTON: '+PAinstance.currentFrame);
+		//			console.log('client pitchAngle BUTTON: '+PAinstance.currentFrame);
 					
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame} );
 										
@@ -162,11 +162,11 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                  //   $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
-						console.log('client pitchAngle post done ');
+	//					console.log('client pitchAngle post done ');
 					});
 				};
 				} else {
-					console.log("PA init Forward");
+		//			console.log("PA init Forward");
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: "up" } );
 				
 				};
@@ -180,7 +180,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 
 					PAinstance.prevFrame();
 
-					console.log('client pitchAngle BUTTON: '+PAinstance.currentFrame);
+		//			console.log('client pitchAngle BUTTON: '+PAinstance.currentFrame);
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: PAinstance.currentFrame } );
 					
 					var PAcurrentAngle = (PAinstance.currentFrame-101)/10;
@@ -188,13 +188,13 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 					posting.done(function( data ) {
-						console.log('client pitchAngle post done ');
+			//			console.log('client pitchAngle post done ');
 					});
 				}
 					
 				
 				} else {
-				console.log("PA init back");
+		//		console.log("PA init back");
 					var posting = $.post( '/pitchAngle', { pitchAngleValue: "down" } );
 				};
 			});
@@ -202,9 +202,9 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					
 		$( ".PAinitButton-checkbox" ).on( "click", function() {
 
-			console.log("INIT on click");
+	//		console.log("INIT on click");
 				PAinitSelection = $(".PAinitButton-checkbox:checked").val();
-				console.log("init on? "+PAinitSelection);
+			//	console.log("init on? "+PAinitSelection);
 				if (PAinitSelection == "on") {
 									PAinstance.currentFrame = 1;
 					PAcurrentAngle = (PAinstance.currentFrame-101)/10;
@@ -212,7 +212,7 @@ PAinstance.gotoAndStop(+PAframeToPlay);
 					$(".PAcurrentAngle span").text(PAcurrentAngle+"°");
                     $(".PAcurrentFrame span").text(PAinstance.currentFrame);
 				} else {
-					console.log("INIT ON");
+	//				console.log("INIT ON");
 
 				}
 		 });
